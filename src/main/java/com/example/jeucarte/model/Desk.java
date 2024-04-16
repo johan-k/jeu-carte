@@ -1,11 +1,17 @@
 package com.example.jeucarte.model;
 
-import java.util.ArrayList;
-
 public class Desk {
     private Carte[] cartes;
 
     public Desk() {
+        cartes = new Carte[52];
+        int i = 0;
+        for (Couleur couleur : Couleur.values()) {
+            for (Valeur valeur : Valeur.values()) {
+                cartes[i] = new Carte(couleur, valeur);
+                i++;
+            }
+        }
     }
 
     public Carte[] getCartes() {
