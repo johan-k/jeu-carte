@@ -21,4 +21,14 @@ public class Carte {
     public String toString() {
         return valeur + " de " + couleur;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return couleur.equals(((Carte) other).getCouleur()) && valeur.equals(((Carte) other).getValeur());
+    }
 }
