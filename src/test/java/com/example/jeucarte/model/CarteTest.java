@@ -12,4 +12,11 @@ public class CarteTest {
         String actual = carte.toString();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void givenTwoCartes_whenValueAreTheSame_ThenReturnEqualsTrue() {
+        Carte carte = new Carte(Couleur.PIQUE, Valeur.AS);
+        Carte carte2 = new Carte(Couleur.PIQUE, Valeur.AS);
+        assertEquals(carte, carte2);
+    }
 }
