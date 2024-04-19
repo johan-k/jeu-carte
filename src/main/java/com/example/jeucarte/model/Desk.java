@@ -20,6 +20,8 @@ public class Desk {
     }
 
     public List<Carte> distributeTenCartes() {
-        return null;
+        List<Carte> toDistribute = new ArrayList<>(cartes.subList(0, 10));
+        cartes.subList(0, 10).clear();
+        return toDistribute;
     }
 }
