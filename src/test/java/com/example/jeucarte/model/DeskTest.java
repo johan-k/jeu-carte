@@ -11,17 +11,26 @@ public class DeskTest {
     @Test
     public void givenDesk_whenInitialization_ThenReturnDeskWith52Cartes() {
         Desk desk = new Desk();
-        assertEquals(52, desk.getCartes().length);
+        assertEquals(52, desk.getCartes().size());
     }
 
     @Test
     public void givenDesk_whenInitialization_ThenReturnDeskWith52CartesWithDifferentValues() {
         Desk desk = new Desk();
-        Carte[] cartes = desk.getCartes();
-        for (int i = 0; i < cartes.length; i++) {
-            for (int j = i + 1; j < cartes.length; j++) {
-                assertNotEquals(cartes[i], cartes[j]);
+        List<Carte> cartes = desk.getCartes();
+        for (int i = 0; i < cartes.size(); i++) {
+            for (int j = i + 1; j < cartes.size(); j++) {
+                assertNotEquals(cartes.get(i), cartes.get(j));
             }
         }
     }
+
+    @Test
+    public void givenDesk_when10CartesIsGiven_ThenReturnDeskWithoutTheseCartes() {
+        Desk desk = new Desk();
+        List<Carte> cartesDistributed = desk.distributeTenCartes();
+        assertEquals(10, cartesDistributed.size());
+        assertEquals(42, desk.getCartes().size());
+    }
+
 }
