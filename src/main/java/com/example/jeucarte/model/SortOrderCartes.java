@@ -7,8 +7,12 @@ public class SortOrderCartes {
     private List<Valeur> valeurOrder;
 
     public SortOrderCartes() {
-        this.couleurOrder = new ArrayList<>();
-        this.valeurOrder = new ArrayList<>();
+        List<Couleur> couleurs = new ArrayList<>(Arrays.asList(Couleur.values()));
+        List<Valeur> valeurs = new ArrayList<>(Arrays.asList(Valeur.values()));
+        Collections.shuffle(couleurs);
+        Collections.shuffle(valeurs);
+        this.couleurOrder = couleurs;
+        this.valeurOrder = valeurs;
     }
 
     public List<Couleur> getCouleurOrder() {
