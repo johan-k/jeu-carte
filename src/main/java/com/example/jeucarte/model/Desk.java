@@ -24,4 +24,8 @@ public class Desk {
         cartes.subList(0, 10).clear();
         return toDistribute;
     }
+
+    public void shuffle() {
+        
+    }
 }

@@ -33,4 +33,12 @@ public class DeskTest {
         assertEquals(42, desk.getCartes().size());
     }
 
+    @Test
+    public void givenDesk_whenShuffleing_ThenReturnMixedDesk() {
+        Desk desk = new Desk();
+        List<Carte> cartesCopy = desk.getCartes();
+        desk.shuffle();
+        assertNotEquals(desk.getCartes(), cartesCopy);
+    }
+
 }

@@ -1,8 +1,5 @@
 package com.example.jeucarte.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public class Main {
@@ -13,6 +10,6 @@ public class Main {
     }
 
     public List<Carte> getCartes() {
-        return new ArrayList<>();
+        return this.cartes;
     }
 }
